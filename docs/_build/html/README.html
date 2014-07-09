@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Mezzanine BS Banners &mdash; Mezzanine BS Banners 0.1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Mezzanine BS Banners 0.1.0 documentation" href="index.html" />
+    <link rel="next" title="Mezzanine BS Banners" href="features.html" />
+    <link rel="prev" title="Mezzanine BS Banners" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="features.html" title="Mezzanine BS Banners"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Mezzanine BS Banners"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Mezzanine BS Banners 0.1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="mezzanine-bs-banners">
+<h1>Mezzanine BS Banners<a class="headerlink" href="#mezzanine-bs-banners" title="Permalink to this headline">¶</a></h1>
+<p><strong>Making it easier to manage attention grabbing Bootstrap Carousels and
+compelling Bootstrap Jumbotrons as banners on home pages</strong></p>
+<p>Designed to quickly and easily manange attention grabbing Bootstrap carousels
+and compelling Bootstrap Jumbotrons as banners with the same ease as ordinary
+Mezzanine pages without editing templates.</p>
+<p>The following Bootstrap layouts are supported:</p>
+<ul class="simple">
+<li>Carousel</li>
+<li>Jumbotron</li>
+</ul>
+<div class="section" id="quick-start">
+<h2>Quick start<a class="headerlink" href="#quick-start" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Install the app</p>
+</li>
+<li><p class="first">Add &#8220;mezzanine_bsbanners&#8221; to your INSTALLED_APPS setting like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>INSTALLED_APPS = (
+    ...
+    &#39;mezzanine_bsbanners&#39;,
+)
+</pre></div>
+</div>
+</li>
+<li><p class="first">Add blocks menu item to admin menu (Optional):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">ADMIN_MENU_ORDER</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="s">&quot;Content&quot;</span><span class="p">,</span> <span class="p">(</span>
+            <span class="s">&quot;mezzanine_bsbanners.*&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="p">),</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<ol class="arabic simple" start="3">
+<li>Run <cite>python manage.py syncdb</cite> to create the database models.</li>
+</ol>
+<div class="section" id="usage">
+<h3>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h3>
+<p>mezzanine-bsbanners are similar to django-flatblocks.</p>
+<ol class="arabic">
+<li><p class="first">Include bsbanners_tags in the template:</p>
+<blockquote>
+<div><p>{% load ... bsbanners_tags %}</p>
+</div></blockquote>
+</li>
+<li><p class="first">Insert block anywhere in the template:</p>
+<blockquote>
+<div><p>{% bsbanner &#8220;My Banner&#8221; %}
+{% bsbanner {block} %}
+{% bsbanner {block} &#8220;my_template.html&#8221; %}
+{% bsbanner {block} {template_name} %}</p>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="dependencies">
+<h3>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="http://djangoproject.com/">Django</a> 1.6</li>
+<li><a class="reference external" href="http://mezzanine.jupo.org">Mezzanine</a> 3.x</li>
+<li><a class="reference external" href="http://getbootstrap.com/">Bootstrap</a> 3.x</li>
+</ul>
+</div>
+<div class="section" id="support">
+<h3>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h3>
+<p>To report a security issue, please send an email privately to
+<a class="reference external" href="mailto:ahicks&#37;&#52;&#48;p-o&#46;co&#46;uk?subject=mezzanine-bsbanners+Security+Issue">ahicks<span>&#64;</span>p-o<span>&#46;</span>co<span>&#46;</span>uk</a>. This gives us a chance to fix the issue and
+create an official release prior to the issue being made
+public.</p>
+<p>For general questions or comments, please contact  <a class="reference external" href="mailto:ahicks&#37;&#52;&#48;p-o&#46;co&#46;uk?subject=mezzanine-bsbanners+Security+Issue">ahicks<span>&#64;</span>p-o<span>&#46;</span>co<span>&#46;</span>uk</a>.</p>
+<p>Communications are expected to conform to the <a class="reference external" href="https://www.djangoproject.com/conduct/">Django Code of Conduct</a>.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Mezzanine BS Banners</a><ul>
+<li><a class="reference internal" href="#quick-start">Quick start</a><ul>
+<li><a class="reference internal" href="#usage">Usage</a></li>
+<li><a class="reference internal" href="#dependencies">Dependencies</a></li>
+<li><a class="reference internal" href="#support">Support</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Mezzanine BS Banners</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="features.html"
+                        title="next chapter">Mezzanine BS Banners</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/README.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="features.html" title="Mezzanine BS Banners"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Mezzanine BS Banners"
+             >previous</a> |</li>
+        <li><a href="index.html">Mezzanine BS Banners 0.1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Persistent Objects Ltd.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>
